@@ -1,15 +1,11 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useMediaQuery } from "react-responsive";
 import { sliderLists } from "../../constants";
 import { useRef, useState } from "react";
 
 const Menu = () => {
-    const isMobile = useMediaQuery({maxWidth: 767});
-
     const [currentIndex, setCurrentIndex] = useState(0);
-    const contentRef = useRef()
-
+    const contentRef = useRef<HTMLDivElement  | null>(null);
     const totalDrinks = sliderLists.length; 
 
     useGSAP(()=>{

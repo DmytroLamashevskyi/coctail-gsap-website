@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 
 const Hero = () => {
-  const videoRef = useRef();
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const isMobile = useMediaQuery({maxWidth: 767});
 
   useGSAP(() => {
@@ -51,10 +51,13 @@ const Hero = () => {
       },
     })
 
-    videoRef.current.onloadedmetadata = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.onloadedmetadata = () => {
      tl.to(videoRef.current, 
       { 
-        currentTime: videoRef.current.duration,
+        currentTime: video.duration,
       });
     };
 
