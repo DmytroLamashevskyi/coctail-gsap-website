@@ -27,12 +27,12 @@ const Cocktails = () => {
     return (
         <section id="cocktails" className="noisy">
         <img
-          src={`${import.meta.env.BASE_URL}images/hero-left-leaf.png`}
+          src={`${import.meta.env.BASE_URL}images/cocktail-left-leaf.png`}
           alt="Left Leaf"
           id="c-left-leaf"
         />
         <img
-          src={`${import.meta.env.BASE_URL}images/hero-right-leaf.png`}
+          src={`${import.meta.env.BASE_URL}images/cocktail-right-leaf.png`}
           alt="Right Leaf"
           id="c-right-leaf"
         />
